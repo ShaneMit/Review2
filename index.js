@@ -1,8 +1,9 @@
-let name = prompt('What is your name?')
-let age = prompt('What is your age?')
-let password = prompt('What is your password?')
+let num = parseInt(prompt('Pick a number'))
 
-alert(`
-Name: ${name} 
-Age: ${age} 
-Password: ${password}`)
+if (num % 2 === 0) {
+  alert('Even')
+} else if (num % 2 !== 0) {
+  alert('Odd')
+} else if (isNaN(num) === true) {
+  alert('NaN')
+}
