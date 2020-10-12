@@ -1,17 +1,8 @@
-checkSpeed(130)
+let name = prompt('What is your name?')
+let age = prompt('What is your age?')
+let password = prompt('What is your password?')
 
-function checkSpeed(speed) {
-  let speedLimit = 70
-  let kmPerPoint = 5
-  
-  if (speed < speedLimit + kmPerPoint) {
-    console.log('Ok')
-  } else { 
-    const points = Math.floor((speed - speedLimit) / kmPerPoint)
-    if (points >= 12){
-      console.log('License suspended')
-    } else {
-      console.log('Points', points)
-    }
-  }
-}
+alert(`
+Name: ${name} 
+Age: ${age} 
+Password: ${password}`)
