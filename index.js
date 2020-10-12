@@ -1,7 +1,21 @@
+let arr = [88, 89, 38, 49, 92, 55, 58, 47, 8, 37, 86, 35, 87, 77, 72, 4, 51, 66, 81, 96, 23, 6, 82, 87, 50, 52, 35, 2, 77, 14, 28, 19, 23, 93, 24, 11, 74, 71, 61, 89, 54, 46, 47, 53, 89, 77, 83, 48, 9, 93, 61, 35, 44, 68, 68, 1, 3, 22, 51, 82, 0, 95, 97, 72, 55, 14, 17, 21, 23, 80, 92, 17, 77, 42, 1, 42, 46, 95, 46, 13, 41, 15, 23, 90, 99, 16, 50, 30, 14, 71, 34, 10, 73, 53, 96, 1, 32, 84, 53, 34]
 
-for (let i = 0; i <= 6; i++) {
-  
-  let num = parseInt(prompt('Pick a number'))
-
-  alert(num % 2 ===0 ? 'Number is even' : 'Number is odd')
+for(let i = 0; i < arr.length; i++){
+  if (arr[i] % 2 === 0) {
+    console.log(arr[i])
+    console.log('Even')
+  } else {
+    console.log(arr[i])
+    console.log('Odd')
+  }
 }
+// for(let i = 0; i < 100; i++) {
+//   arr.push(Math.floor(Math.random() * 100))
+// }
+
+// console.log(arr)
+
+// for (let i = 0; i < arr.length; i++) {
+  
+//   alert(arr[i])
+// }
