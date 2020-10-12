@@ -1,9 +1,7 @@
-let num = parseInt(prompt('Pick a number'))
 
-if (num % 2 === 0) {
-  alert('Even')
-} else if (num % 2 !== 0) {
-  alert('Odd')
-} else if (isNaN(num) === true) {
-  alert('NaN')
+for (let i = 0; i <= 6; i++) {
+  
+  let num = parseInt(prompt('Pick a number'))
+
+  alert(num % 2 ===0 ? 'Number is even' : 'Number is odd')
 }
