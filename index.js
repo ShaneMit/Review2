@@ -1,6 +1,7 @@
+var userScore = ''
+var compScore = ''
+
 for (let i = 0; i < 10; i++) {
-  var userScore = ''
-  var compScore = ''
   let choices = ['r', 'p', 's']
   let userChoice = prompt('Pick r, p, or s')
   let compChoice = choices[Math.floor(Math.random() * choices.length)]
@@ -8,11 +9,18 @@ for (let i = 0; i < 10; i++) {
   console.log(compChoice)
 
   if (userChoice === 'r' && compChoice === 's') {
-    userScore+
+    userScore++
     alert(`You win! User: ${userScore}`)
   } else if (userChoice === 'r' && compChoice === 'p') {
-    compScore+
+    compScore++
     alert(`You lose. Comp: ${compScore}`)
-  }
-
+  } else if (userChoice === compChoice) {
+    alert(`Tie`)
+  } else if (userChoice === 'p' && compChoice === 'r') {
+    userScore++
+    alert(`You win! User: ${userScore}`)
+  } else if (userChoice === 'p' && compChoice === 's') {
+    compScore++
+    alert(`You lose. Comp: ${compScore}`)
+  } 
 }
