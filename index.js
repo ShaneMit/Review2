@@ -29,4 +29,20 @@ for (let i = 0; i < 10; i++) {
     compScore++
     alert(`You lose. Comp: ${compScore}`)
   }
+
+  if (i === 9) {
+    if (userScore > compScore) {
+      alert(`Game over! YOU WIN!
+             You: ${userScore}
+             Comp: ${compScore}`)
+    } else if (compScore > userScore) {
+      alert(`Game over! YOU LOSE!
+             Comp: ${compScore}
+             You: ${userScore}`)
+    } else if (userScore === compScore) {
+      alert(`Game over! IT'S A TIE!
+             You: ${userScore}
+             Comp ${compScore}`)
+    }
+  }
 }
