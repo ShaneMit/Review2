@@ -22,5 +22,11 @@ for (let i = 0; i < 10; i++) {
   } else if (userChoice === 'p' && compChoice === 's') {
     compScore++
     alert(`You lose. Comp: ${compScore}`)
-  } 
+  } else if (userChoice === 's' && compChoice === 'p') {
+    userScore++
+    alert(`You win! User: ${userScore}`)
+  } else if (userChoice === 's' && compChoice === 'r') {
+    compScore++
+    alert(`You lose. Comp: ${compScore}`)
+  }
 }
