@@ -18,20 +18,45 @@
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
   <script>
-    let user = {
+    let users = [
+      { 
       name: 'Shane',
       age: 30,
       email: 'shanemit@cox.net'
-    }
-    document.getElementById('myDiv').innerHTML = `
-    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-      <div class="card-header">${user.name}</div>
-        <div class="card-body">
-        <p class="card-text">${user.age}</p>
-        <p class="card-text">${user.email}</p>
-      </div>
-    </div>
-    `
+      },
+      {
+        name: 'Molly',
+        age: 29,
+        email: 'molly@molly.molly'
+      },
+      {
+        name: 'Jesus M. Chrich',
+        age: 100,
+        email: 'J@M.C'
+      }
+      ]
+      for (let i = 0; i < users.length; i++) {
+      let userElem = document.createElement('div')
+      userElem.style.maxWidth = '18rem'
+      userElem.className = 'card text-white bg-dark mb-3'
+      userElem.innerHTML = `
+      <div class="card-header">${users[i].name}</div>
+         <div class="card-body">
+          <p class="card-text">${users[i].age}</p>
+          <p class="card-text">${users[i].email}</p>
+         </div>
+      `
+      document.getElementById('myDiv').append(userElem)
+      }
+    // document.getElementById('myDiv').innerHTML = `
+    // <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+    //   <div class="card-header">${user.name}</div>
+    //     <div class="card-body">
+    //     <p class="card-text">${user.age}</p>
+    //     <p class="card-text">${user.email}</p>
+    //   </div>
+    // </div>
+    // `
 
   </script>
 </body>
