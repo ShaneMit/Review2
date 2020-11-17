@@ -8,9 +8,12 @@
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 <body>
-  <div id="myDiv">
+  <button id="cat">Cat</button>
+  <button id="dog">Dog</button>
+  <button id="cow">Cow</button>
+  <button id="chicken">Chicken</button>
+  <button id="human">Human</button>
 
-  </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -18,45 +21,36 @@
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
   <script>
-    let users = [
-      { 
-      name: 'Shane',
-      age: 30,
-      email: 'shanemit@cox.net'
-      },
-      {
-        name: 'Molly',
-        age: 29,
-        email: 'molly@molly.molly'
-      },
-      {
-        name: 'Jesus M. Chrich',
-        age: 100,
-        email: 'J@M.C'
-      }
-      ]
-      for (let i = 0; i < users.length; i++) {
-      let userElem = document.createElement('div')
-      userElem.style.maxWidth = '18rem'
-      userElem.className = 'card text-white bg-dark mb-3'
-      userElem.innerHTML = `
-      <div class="card-header">${users[i].name}</div>
-         <div class="card-body">
-          <p class="card-text">${users[i].age}</p>
-          <p class="card-text">${users[i].email}</p>
-         </div>
-      `
-      document.getElementById('myDiv').append(userElem)
-      }
-    // document.getElementById('myDiv').innerHTML = `
-    // <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-    //   <div class="card-header">${user.name}</div>
-    //     <div class="card-body">
-    //     <p class="card-text">${user.age}</p>
-    //     <p class="card-text">${user.email}</p>
-    //   </div>
-    // </div>
-    // `
+    document.getElementById('cat').addEventListener('click', () => {
+    alert(`
+      Name: Cat
+      Sound: Meow
+    `)
+    })
+    document.getElementById('dog').addEventListener('click', () => {
+        alert(`
+      Name: Dog
+      Sound: Woof
+    `)
+      })
+    document.getElementById('cow').addEventListener('click', () => {
+        alert(`
+      Name: Cow
+      Sound: Moo
+    `)
+      })
+    document.getElementById('chicken').addEventListener('click', () => {
+        alert(`
+      Name: Chicken
+      Sound: Cluck
+    `)
+      })
+    document.getElementById('human').addEventListener('click', () => {
+        alert(`
+      Name: Human
+      Sound: Pained screaming
+    `)
+      })
 
   </script>
 </body>
