@@ -8,11 +8,9 @@
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 </head>
 <body>
-  <button id="cat">Cat</button>
-  <button id="dog">Dog</button>
-  <button id="cow">Cow</button>
-  <button id="chicken">Chicken</button>
-  <button id="human">Human</button>
+  <div id="animalBtns">
+
+  </div>
 
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -21,36 +19,46 @@
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
   <script>
-    document.getElementById('cat').addEventListener('click', () => {
-    alert(`
-      Name: Cat
-      Sound: Meow
-    `)
+    const animals = [
+      {
+        Name: "dog",
+        Sound: "woof"
+      },
+      {
+        Name: "cat",
+        Sound: "meow"
+      },
+      {
+        Name: "cow",
+        Sound: "moo"
+      },
+      {
+        Name: "chicken",
+        Sound: "cluck"
+      },
+      {
+        Name: "human",
+        Sound: "pained screaming"
+      }
+    ]
+    
+    for (let i = 0; i < animals.length; i++) {
+      let btnElem = document.createElement('button')
+      btnElem.className = 'animal'
+      btnElem.textContent = animals[i].Name
+      btnElem.dataset.index = i
+      document.getElementById('animalBtns').append(btnElem)
+    }
+
+    document.addEventListener('click', (event) => {
+      if (event.target.className === 'animal') {
+        let animal = animals[event.target.dataset.index]
+        alert(`
+          Name: ${animal.Name}
+          Sound: ${animal.Sound}
+        `)
+      }
     })
-    document.getElementById('dog').addEventListener('click', () => {
-        alert(`
-      Name: Dog
-      Sound: Woof
-    `)
-      })
-    document.getElementById('cow').addEventListener('click', () => {
-        alert(`
-      Name: Cow
-      Sound: Moo
-    `)
-      })
-    document.getElementById('chicken').addEventListener('click', () => {
-        alert(`
-      Name: Chicken
-      Sound: Cluck
-    `)
-      })
-    document.getElementById('human').addEventListener('click', () => {
-        alert(`
-      Name: Human
-      Sound: Pained screaming
-    `)
-      })
 
   </script>
 </body>
