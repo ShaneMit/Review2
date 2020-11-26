@@ -11,8 +11,21 @@
   <script>
     // Array of potential words
     const words = ['pizza', 'burger', 'hotdog', 'burrito', 'taco', 'spaghetti']
+    let chosenWord = ''
     const lettersGuessed = []
 
+    const displayWord = () => {
+      let wordDisp = ''
+      for (let i = 0; i < chosenWord.length; i++) {
+        wordDisp += '_ '
+      }
+      document.getElementById('word').innerHTML = wordDisp
+    }
+
+    const newRound = () => {
+      chosenWord = words[Math.floor(Math.random() * words.length)]
+      displayWord()
+    }
     // Key press listener
     document.onkeyup = event => {
       // make sure key is between a-z and not already guessed
@@ -21,10 +34,9 @@
           lettersGuessed.indexOf(event.key) === -1) {
             // add key to already guessed letters
          lettersGuessed.push(event.key)
-         console.log(lettersGuessed)
       }
     }
-
+    newRound()
   </script>
 </body>
 </html>
