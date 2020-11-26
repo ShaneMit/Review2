@@ -6,6 +6,25 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <p id="word"></p>
+
+  <script>
+    // Array of potential words
+    const words = ['pizza', 'burger', 'hotdog', 'burrito', 'taco', 'spaghetti']
+    const lettersGuessed = []
+
+    // Key press listener
+    document.onkeyup = event => {
+      // make sure key is between a-z and not already guessed
+      if (event.keyCode >= 65 &&
+          event.keyCode <= 90 && 
+          lettersGuessed.indexOf(event.key) === -1) {
+            // add key to already guessed letters
+         lettersGuessed.push(event.key)
+         console.log(lettersGuessed)
+      }
+    }
+
+  </script>
 </body>
 </html>
