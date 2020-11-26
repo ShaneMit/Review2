@@ -23,6 +23,7 @@
     let guesses = 10
     let losses = 0
     let wins = 0
+    let isOver = false
 
     // Function to display word
     const displayWord = () => {
@@ -39,6 +40,7 @@
       }
       document.getElementById('word').innerHTML = wordDisp
       if (isWin) {
+        isOver = true
         wins++
         document.getElementById('wins').textContent = wins
         document.getElementById('winlose').textContent = 'You Won!!!'
@@ -48,6 +50,8 @@
 
     // Starts new round
     const newRound = () => {
+      isOver = false
+      guesses = 10
       lettersGuessed = []
       // Picks random word from array
       chosenWord = words[Math.floor(Math.random() * words.length)]
@@ -61,9 +65,10 @@
       document.getElementById('wins').textContent = wins
     }
     // Key press listener
-    document.onkeyup = event => {
+    document.onkeydown = event => {
       // make sure key is between a-z and not already guessed
-      if (event.keyCode >= 65 &&
+      if (!isOver &&
+          event.keyCode >= 65 &&
           event.keyCode <= 90 && 
           lettersGuessed.indexOf(event.key) === -1) {
             // add key to already guessed letters
@@ -74,6 +79,7 @@
           guesses -- 
           document.getElementById('guesses').textContent = guesses
           if (guesses <= 0) {
+            isOver = true
             losses++
             document.getElementById('losses').textContent = losses
             document.getElementById('winlose').textContent = 'you lose.'
@@ -82,7 +88,7 @@
           }
          }
          
-      } else if (event.keyCode === 13) {
+      } else if (event.keyCode === 13 && isOver) {
         newRound()
       }
     }
